@@ -14,9 +14,12 @@ spec:
   strategy:
     canary:
       steps:
-      - setWeight: 10
+      - setWeight: 20
       - pause:
-          duration: 120s
+          duration: "1m"
+      - setWeight: 50
+      - pause:
+          duration: "2m"
       - experiment:
           templates:
           - name: {{ include "canary-demo.fullname" . }}-preview
