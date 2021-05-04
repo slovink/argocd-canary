@@ -30,6 +30,14 @@ spec:
             metadata:
               labels:
                 app: {{ include "canary-demo.fullname" . }}-preview
+  {{- if .Values.analysis.enabled }}
+      - analysis:
+          templates:
+          - templateName: success-rate
+          args:
+          - name: service-name
+            value: {{ include "canary-demo.fullname" . }}
+  {{- end }}
   template:
     metadata:
     {{- with .Values.podAnnotations }}

@@ -35,6 +35,9 @@ securityContext: {}
   # readOnlyRootFilesystem: true
   # runAsNonRoot: true
   # runAsUser: 1000
+analysis: 
+  enabled: true
+  
 
 service:
   type: ClusterIP
