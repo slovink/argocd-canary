@@ -37,6 +37,7 @@ securityContext: {}
   # runAsUser: 1000
 analysis: 
   enabled: true
+  promeheusHost:
   
 
 service:
