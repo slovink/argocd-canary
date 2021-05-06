@@ -10,7 +10,7 @@ spec:
     value: 9090
   metrics:
   - name: success-rate
-    successCondition: result[0] >= 0.95
+    successCondition: result[0] >= "0.95"
     provider:
       prometheus:
         address: {{ .Values.analysis.promethuesHost }}
