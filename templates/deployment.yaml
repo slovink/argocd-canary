@@ -33,10 +33,7 @@ spec:
   {{- if .Values.analysis.enabled }}
       - analysis:
           templates:
-          - templateName: success-rate
-          args:
-          - name: service-name
-            value: {{ include "canary-demo.fullname" . }}
+          - templateName: success
   {{- end }}
   template:
     metadata:
