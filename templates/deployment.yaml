@@ -34,6 +34,7 @@ spec:
       - analysis:
           templates:
           - templateName: success
+          - templateName: random-fail
   {{- end }}
   template:
     metadata:

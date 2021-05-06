@@ -2,10 +2,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AnalysisTemplate
 metadata:
-  name: success
+  name: random-fail
 spec:
   metrics:
-  - name: pass
+  - name: random-fail
     interval: 5s
     failureLimit: 1
     provider:
@@ -17,7 +17,7 @@ spec:
               - name: sleep
                 image: alpine:3.8
                 command: [sh, -c]
-                args: [exit 0]
+                args: [FLIP=$(($(($RANDOM%10))%2)) && exit $FLIP]
               restartPolicy: Never
           backoffLimit: 0
   {{- end }}
