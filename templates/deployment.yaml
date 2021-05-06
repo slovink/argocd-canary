@@ -15,7 +15,7 @@ spec:
     canary:
       steps:
       - setWeight: 25
-      - pause: {}
+      # - pause: {}
       # - pause:
       #     duration: "1m"
       # - setWeight: 50
@@ -34,7 +34,7 @@ spec:
   {{- if .Values.analysis.enabled }}
       - analysis:
           templates:
-          # - templateName: random-fail
+         - templateName: random-fail
           - templateName: pass
             clusterScope: true
   {{- end }}
