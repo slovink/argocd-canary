@@ -34,8 +34,8 @@ spec:
   {{- if .Values.analysis.enabled }}
       - analysis:
           templates:
-         - templateName: random-fail
-         - templateName: pass
+          - templateName: random-fail
+          - templateName: pass
             clusterScope: true
   {{- end }}
   template:
