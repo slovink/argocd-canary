@@ -37,7 +37,7 @@ securityContext: {}
   # runAsUser: 1000
 analysis: 
   enabled: true
-  promeheusHost:
+  prometheusHost: prometheus-server.canary.svc.cluster.local:80
   
 
 service:
