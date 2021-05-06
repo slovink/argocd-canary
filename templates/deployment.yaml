@@ -31,11 +31,11 @@ spec:
               labels:
                 app: {{ include "canary-demo.fullname" . }}-preview
   {{- if .Values.analysis.enabled }}
-        analysis:
-        - name: random-fail
-          templateName: random-fail
-        - name: success
-          templateName: pass
+      - analysis:
+          templates:
+          - templateName: random-fail
+          - templateName: success
+            clusterScope: true
   {{- end }}
   template:
     metadata:
